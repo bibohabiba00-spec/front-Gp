@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشروع الإشارة - الترجمة (الصفحة الرئيسية)</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* 🎨 Cute Color Palette (Matched to Image) */
+        :root {
+            --primary: #5C6BC0; /* Navy Blue for Navbar and Main Text */
+            --secondary: #65A30D; /* Soft Green/Mint for accents */
+            --button-blue: #3B82F6; /* Bright Blue Button */
+            --button-lavender: #C4B5FD; /* Soft Lavender Button */
+            --button-pink: #F472B6; /* Soft Pink Button */
+            --background: #E8F0FE; /* Very light background */
+            --card-bg: #FFFFFF;
+            --text-dark: #1F2937; 
+            --subtitle-bg: rgba(255, 255, 255, 0.95);
+            --border-radius-xl: 25px; /* Extremely rounded corners */
+            --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif; 
+            background-color: var(--background);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            /* إضافة قلب ناعم في الزوايا كما بالصورة */
+            background-image: 
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath fill='%23BBDCFB' opacity='0.3' d='M20 38.6c-7.2-7.8-15-15.5-15-22.1 0-4.6 3.7-8.3 8.3-8.3 4.2 0 7.3 2.9 8.7 6.8 1.4-3.9 4.5-6.8 8.7-6.8 4.6 0 8.3 3.7 8.3 8.3 0 6.6-7.8 14.3-15 22.1z'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath fill='%23BBDCFB' opacity='0.3' d='M20 38.6c-7.2-7.8-15-15.5-15-22.1 0-4.6 3.7-8.3 8.3-8.3 4.2 0 7.3 2.9 8.7 6.8 1.4-3.9 4.5-6.8 8.7-6.8 4.6 0 8.3 3.7 8.3 8.3 0 6.6-7.8 14.3-15 22.1z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left 20px bottom 20px, right 20px top 20px;
+        }
+
+        /* ---------------------------------------------------- */
+        /* Navbar (Maintain Original Design) */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: var(--primary); /* أزرق داكن/نيفي كما في الصورة */
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .navbar nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .navbar nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 8px 15px;
+            border-radius: 15px;
+            transition: all 0.3s ease-in-out;
+            font-weight: 600;
+        }
+
+        .navbar nav a:hover, .navbar nav a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .accessibility-btn {
+            background-color: #A052E6; /* بنفسجي فاتح في الصورة */
+            border-radius: 50px;
+            padding: 8px 20px !important;
+        }
+
+        .login-btn, .signup-btn {
+            background-color: #38A169; /* أخضر ناعم */
+            border-radius: 5px;
+            padding: 5px 15px !important;
+        }
+        
+        /* ---------------------------------------------------- */
+
+        /* 🔶 Body Layout */
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 25px; /* تباعد أقل كما في الصورة */
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Card styles (Matching the image) */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-xl);
+            padding: 30px; 
+            box-shadow: var(--shadow-soft);
+            border: 1px solid #E5E7EB; /* حدود خفيفة جداً */
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 🔵 Main Avatar Column (Middle Card) */
+        .main-column {
+            flex-grow: 1;
+            max-width: 450px; /* تحديد عرض ليتناسب مع الترتيب */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .avatar-card { /* <--- Avatar Box Container */
+            background-color: #F8FAFC; /* لون فاتح جداً */
+            border-radius: var(--border-radius-xl);
+            border: 3px solid #E0F2F1; /* حدود مينت فاتحة */
+            padding: 30px;
+            width: 100%;
+            height: 300px; /* تحديد ارتفاع تقريبي */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .avatar-box { /* <--- Actual Avatar Area */
+            width: 120px;
+            height: 120px; 
+            background-color: #D1D5DB; /* لون رمادي مؤقت للأفاتار */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .avatar-card span {
+            font-weight: 600;
+            color: #6B7280;
+        }
+
+        /* Subtitle Bar */
+        .subtitle-bar {
+            background-color: var(--card-bg);
+            padding: 15px 25px;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-align: center;
+            width: 100%;
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* Controls Group (Below Subtitle) */
+        .main-controls-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* ---------------------------------------------------- */
+        /* Side Columns (Input/Output) */
+        .side-columns {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            max-width: 350px;
+        }
+
+        /* Input Box */
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .input-section h3, .output-section h3 {
+            font-size: 18px;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        /* Buttons matching the image style */
+        .input-button, .main-control-btn, .output-button {
+            height: 50px;
+            padding: 0 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        /* Input Button Colors */
+        .start-voice-btn {
+            background-color: var(--button-blue);
+            color: white;
+        }
+        .upload-audio-btn {
+            background-color: var(--button-blue);
+            color: white;
+        }
+        .type-translate-btn {
+            background-color: var(--button-lavender);
+            color: var(--text-dark);
+        }
+
+        /* Main Control Buttons (Below Subtitle) */
+        .main-control-btn {
+            background-color: var(--button-lavender);
+            color: var(--text-dark);
+            flex-grow: 1;
+        }
+
+        /* Output Button Colors */
+        .play-audio-btn {
+            background-color: var(--button-blue);
+            color: white;
+            margin-top: 15px;
+        }
+        .download-transcript-btn {
+            background-color: var(--button-pink);
+            color: white;
+        }
+
+        /* Text Area Placeholder */
+        .translated-text-area {
+            background-color: #F8FAFC;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            color: #9CA3AF;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        
+        /* ---------------------------------------------------- */
+        /* Media Query (Responsiveness) */
+        @media (max-width: 1200px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+            .main-column, .side-columns {
+                max-width: 100%;
+                width: 100%;
+            }
+            .side-columns {
+                flex-direction: row;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .side-columns {
+                flex-direction: column;
+            }
+            .main-controls-group {
+                flex-wrap: wrap;
+            }
+            .main-controls-group .main-control-btn {
+                width: 48%; /* Adjust for better fit on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <i class="fas fa-hand-peace"></i> مشروع الإشارة
+        </div>
+        <nav>
+            <a href="welcome-page.html"><i class="fas fa-handshake"></i> صفحة الترحيب</a>
+            <a href="index.html" class="active"><i class="fas fa-home"></i> الرئيسية</a>
+            <a href="#"><i class="fas fa-language"></i> الترجمة</a>
+            <a href="#"><i class="fas fa-book-open"></i> تعلم الإشارات</a>
+            <a href="#" id="accessibility-btn" class="accessibility-btn"><i class="fas fa-universal-access"></i> إتاحة</a>
+            <a href="#"><i class="fas fa-info-circle"></i> عن الموقع</a>
+            <a href="#" class="login-btn">دخول</a>
+            <a href="#" class="signup-btn">تسجيل</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <div class="side-columns">
+            <div class="input-section card">
+                <h3>خلفية البطاقة</h3>
+                <button class="input-button start-voice-btn">
+                    <i class="fas fa-cloud"></i> ابدأ الصوت
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="input-button upload-audio-btn">
+                    <i class="fas fa-upload"></i> رفع ملف صوتي
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+                <button class="input-button type-translate-btn">
+                    <i class="fas fa-pen"></i> كتابة للترجمة
+                </button>
+            </div>
+        </div>
+
+        <section class="main-column">
+            <div class="card" style="padding: 20px; border: 3px solid #6EE7B7; background-color: #F8FAFC;">
+                <div class="avatar-card">
+                    <div class="avatar-box">
+                        3D
+                    </div>
+                    <span>منطقة رسوم الأفاتار المتحركة</span>
+                </div>
+            </div>
+
+            <div class="subtitle-bar">
+                
+            </div>
+
+            <div class="main-controls-group">
+                <button class="main-control-btn"><i class="fas fa-redo"></i> تكرار</button>
+                <button class="main-control-btn"><i class="fas fa-forward"></i> بطيء</button>
+                <button class="main-control-btn" style="flex-grow: 1.5; background-color: var(--button-blue); color: white;"><i class="fas fa-play"></i> تشغيل الترجمة</button>
+                <button class="main-control-btn"><i class="fas fa-expand"></i> ملء الشاشة</button>
+            </div>
+        </section>
+        
+        <div class="side-columns">
+            <div class="output-section card">
+                <h3>خلفية البطاقة</h3>
+                <div class="translated-text-area">
+                    منطقة النص المُترجم...
+                </div>
+                
+                <button class="output-button play-audio-btn">
+                    <i class="fas fa-play"></i> تشغيل الصوت
+                </button>
+                <button class="output-button download-transcript-btn">
+                    <i class="fas fa-download"></i> تحميل النص المكتوب
+                </button>
+            </div>
+        </div>
+
+    </main>
+    
+    <script>
+        // Function to toggle High Contrast (Accessibility) Mode
+        function toggleHighContrastMode() {
+            document.body.classList.toggle('high-contrast-mode');
+        }
+
+        // Attach event listener to the Accessibility button
+        document.getElementById('accessibility-btn').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            toggleHighContrastMode();
+        });
+    </script>
+</body>
+</html>
