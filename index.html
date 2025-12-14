@@ -1,400 +1,411 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مشروع الإشارة - الترجمة (الصفحة الرئيسية)</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <style>
-        /* 🎨 Cute Color Palette (Matched to Image) */
-        :root {
-            --primary: #5C6BC0; /* Navy Blue for Navbar and Main Text */
-            --secondary: #65A30D; /* Soft Green/Mint for accents */
-            --button-blue: #3B82F6; /* Bright Blue Button */
-            --button-lavender: #C4B5FD; /* Soft Lavender Button */
-            --button-pink: #F472B6; /* Soft Pink Button */
-            --background: #E8F0FE; /* Very light background */
-            --card-bg: #FFFFFF;
-            --text-dark: #1F2937; 
-            --subtitle-bg: rgba(255, 255, 255, 0.95);
-            --border-radius-xl: 25px; /* Extremely rounded corners */
-            --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مشروع الإشارة - النسخة النهائية</title>
 
-        /* Base Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        body {
-            font-family: 'Cairo', sans-serif; 
-            background-color: var(--background);
-            color: var(--text-dark);
-            line-height: 1.6;
-            min-height: 100vh;
-            /* إضافة قلب ناعم في الزوايا كما بالصورة */
-            background-image: 
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath fill='%23BBDCFB' opacity='0.3' d='M20 38.6c-7.2-7.8-15-15.5-15-22.1 0-4.6 3.7-8.3 8.3-8.3 4.2 0 7.3 2.9 8.7 6.8 1.4-3.9 4.5-6.8 8.7-6.8 4.6 0 8.3 3.7 8.3 8.3 0 6.6-7.8 14.3-15 22.1z'/%3E%3C/svg%3E"),
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath fill='%23BBDCFB' opacity='0.3' d='M20 38.6c-7.2-7.8-15-15.5-15-22.1 0-4.6 3.7-8.3 8.3-8.3 4.2 0 7.3 2.9 8.7 6.8 1.4-3.9 4.5-6.8 8.7-6.8 4.6 0 8.3 3.7 8.3 8.3 0 6.6-7.8 14.3-15 22.1z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: left 20px bottom 20px, right 20px top 20px;
-        }
+<style>
+:root {
+    --primary:#9C6E33; --secondary:#1A5276;
+    --gold-gradient: linear-gradient(135deg,#FFC300,#FFB700);
+    --red-gradient: linear-gradient(135deg,#D64545,#E74C3C);
+    --green-gradient: linear-gradient(135deg,#38A169,#2F855A);
+    --background:#FFF8E1; --card-bg:#FEFBEA; --text-dark:#333;
+    --border-radius-xl:12px; --shadow-soft:0 6px 20px rgba(0,0,0,0.15);
+}
 
-        /* ---------------------------------------------------- */
-        /* Navbar (Maintain Original Design) */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            background-color: var(--primary); /* أزرق داكن/نيفي كما في الصورة */
-            color: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+/* Accessibility Mode */
+.high-contrast-mode {
+    background: #000 !important;
+    color: #FFF !important;
+    font-size: 1.1rem;
+}
+.high-contrast-mode .card,
+.high-contrast-mode .hero-section::before,
+.high-contrast-mode .subtitle-bar,
+.high-contrast-mode .translated-text-area {
+    background: #111 !important;
+    color: #FFF !important;
+    border-color: #FFF !important;
+}
+.high-contrast-mode .navbar {background:#222 !important; border-bottom:5px solid #FFD700 !important;}
+.high-contrast-mode a {color:#FFD700 !important;}
 
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            color: white;
-        }
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+    font-family:'Cairo',sans-serif;
+    background:var(--background);
+    color:var(--text-dark);
+    min-height:100vh;
+    line-height:1.6;
+    background-image:url('images/b2.jpg');
+    background-repeat:repeat;
+    background-size:250px 250px;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+}
 
-        .navbar nav {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
+/* Navbar */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:15px 40px;background:var(--primary);color:white;box-shadow:0 5px 15px rgba(0,0,0,0.4);border-bottom:5px solid #FFC300;position:sticky;top:0;z-index:100;}
+.logo{font-size:26px;font-weight:900;color:#FFC300;letter-spacing:1.5px;transition:all 0.5s;}
+.logo:hover{transform:rotateY(360deg);}
+.navbar nav{display:flex;gap:15px;align-items:center;}
+.navbar nav a{text-decoration:none;color:white;font-size:16px;padding:10px 18px;border-radius:8px;font-weight:700;transition:all 0.3s;}
+.navbar nav a:hover,.navbar nav a.active{background:var(--gold-gradient);color:var(--text-dark);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.25);}
+.accessibility-btn{background:var(--red-gradient);}
+.login-btn,.signup-btn{background:var(--green-gradient);}
 
-        .navbar nav a {
-            text-decoration: none;
-            color: white;
-            font-size: 16px;
-            padding: 8px 15px;
-            border-radius: 15px;
-            transition: all 0.3s ease-in-out;
-            font-weight: 600;
-        }
+/* Hero Section */
+.hero-section{
+    width:100%;
+    height:400px;
+    background-image:url('images/pharaoh-hero-bg.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    position:relative;
+    overflow:hidden;
+    transition: background-position 0.3s ease-out;
+}
+.hero-section::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;width:100%;height:100%;
+    background:rgba(0,0,0,0.45);z-index:1;
+}
+.hero-content{
+    position:relative; z-index:2;
+    transition: transform 0.3s ease-out;
+}
 
-        .navbar nav a:hover, .navbar nav a.active {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
+/* Words Reveal Animation */
+.hero-section h1{
+    font-size:42px;
+    font-weight:900;
+    margin-bottom:10px;
+    color:#FFD700;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+.hero-section h1 span{
+    opacity:0;
+    transform:translateY(20px);
+    display:inline-block;
+    animation: wordIn 0.5s forwards;
+}
+@keyframes wordIn{
+    0% {opacity:0; transform:translateY(20px);}
+    50%{opacity:1; transform:translateY(-5px);}
+    100%{opacity:1; transform:translateY(0);}
+}
+.hero-section p{
+    font-size:24px;font-weight:700;text-shadow:1px 1px 8px rgba(0,0,0,0.5);
+    margin-top:15px;
+    opacity:0;
+    animation: fadeInText 1s 1s forwards;
+}
+@keyframes fadeInText{from{opacity:0;}to{opacity:1;}}
 
-        .accessibility-btn {
-            background-color: #A052E6; /* بنفسجي فاتح في الصورة */
-            border-radius: 50px;
-            padding: 8px 20px !important;
-        }
+/* Container */
+.container{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    padding:50px 20px;
+    max-width:1200px;
+    margin:0 auto;
+}
 
-        .login-btn, .signup-btn {
-            background-color: #38A169; /* أخضر ناعم */
-            border-radius: 5px;
-            padding: 5px 15px !important;
-        }
-        
-        /* ---------------------------------------------------- */
+/* Side Columns */
+.side-columns{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    flex:1;
+}
+.input-section,.output-section{width:100%;height:auto;}
 
-        /* 🔶 Body Layout */
-        .container {
-            display: flex;
-            justify-content: center;
-            gap: 25px; /* تباعد أقل كما في الصورة */
-            padding: 50px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+/* Cards */
+.card{
+    background:var(--card-bg);
+    border-radius:var(--border-radius-xl);
+    padding:20px;
+    box-shadow:var(--shadow-soft);
+    border:3px solid var(--secondary);
+    transition:all 0.3s;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
+.card:hover{box-shadow:0 12px 35px rgba(0,0,0,0.35);transform:translateY(-3px);}
 
-        /* Card styles (Matching the image) */
-        .card {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius-xl);
-            padding: 30px; 
-            box-shadow: var(--shadow-soft);
-            border: 1px solid #E5E7EB; /* حدود خفيفة جداً */
-            transition: all 0.3s ease;
-        }
-        .card:hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
+/* Main Column */
+.main-column{
+    flex:1.5;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
+}
 
-        /* 🔵 Main Avatar Column (Middle Card) */
-        .main-column {
-            flex-grow: 1;
-            max-width: 450px; /* تحديد عرض ليتناسب مع الترتيب */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 25px;
-        }
+/* Avatar Card */
+/* Avatar Card (main container) */
+.avatar-card{
+    background:#FBFBF0;
+    border-radius:var(--border-radius-xl);
+    border:5px solid var(--secondary); /* outer border only */
+    padding:40px;
+    width:100%;
+    width:500px; /* bigger than before */
+    height:400px;    /* taller */
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+    box-shadow:none; /* no inner shadow */
+}
 
-        .avatar-card { /* <--- Avatar Box Container */
-            background-color: #F8FAFC; /* لون فاتح جداً */
-            border-radius: var(--border-radius-xl);
-            border: 3px solid #E0F2F1; /* حدود مينت فاتحة */
-            padding: 30px;
-            width: 100%;
-            height: 300px; /* تحديد ارتفاع تقريبي */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-        }
+/* Avatar Box (internal circle) */
+.avatar-box{
+    width:220px;   /* bigger avatar */
+    height:220px;  /* bigger avatar */
+    background:var(--primary);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:70px; /* larger icon */
+    color:#FFC300;
+    margin-bottom:15px;
+    border:none;  /* remove inner border completely */
+    box-shadow:none;
+    font-weight:700;
+    animation: avatarFloat 3s ease-in-out infinite;
+}
 
-        .avatar-box { /* <--- Actual Avatar Area */
-            width: 120px;
-            height: 120px; 
-            background-color: #D1D5DB; /* لون رمادي مؤقت للأفاتار */
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: white;
-            margin-bottom: 10px;
-        }
-        
-        .avatar-card span {
-            font-weight: 600;
-            color: #6B7280;
-        }
+@keyframes avatarFloat{0%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-15px) rotate(5deg);}100%{transform:translateY(0) rotate(0deg);}}
 
-        /* Subtitle Bar */
-        .subtitle-bar {
-            background-color: var(--card-bg);
-            padding: 15px 25px;
-            border-radius: 15px;
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-dark);
-            text-align: center;
-            width: 100%;
-            box-shadow: var(--shadow-soft);
-        }
+/* Subtitle Bar */
+.subtitle-bar{
+    background:var(--secondary);
+    padding:15px 25px;
+    border-radius:var(--border-radius-xl);
+    font-size:20px;
+    font-weight:800;
+    color:white;
+    text-align:center;
+    width:100%;
+    box-shadow:var(--shadow-soft);
+    border:2px solid #FFC300;
+    transition:all 0.3s;
+}
+.subtitle-bar:hover{background:linear-gradient(135deg,#1A5276,#2874A6);}
 
-        /* Controls Group (Below Subtitle) */
-        .main-controls-group {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            width: 100%;
-        }
+/* Buttons */
+.input-button,.output-button{
+    font-weight:700;font-size:16px;border-radius:12px;cursor:pointer;border:none;transition:all 0.35s ease-in-out;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;box-shadow:0 5px 15px rgba(0,0,0,0.2);padding:12px 20px;position:relative;overflow:hidden;
+}
+.input-button:hover,.output-button:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 10px 25px rgba(0,0,0,0.35);filter:brightness(1.15);}
+.start-voice-btn{background:var(--secondary);color:white;}
+.upload-audio-btn{background:var(--secondary);color:white;}
+.type-translate-btn{background:var(--gold-gradient);color:var(--text-dark);}
+.play-audio-btn{background:var(--secondary);color:white;margin-top:15px;}
+.download-transcript-btn{background:var(--red-gradient);color:white;}
 
-        /* ---------------------------------------------------- */
-        /* Side Columns (Input/Output) */
-        .side-columns {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            max-width: 350px;
-        }
+/* Translated Text Area */
+.translated-text-area{background-color:#FEFBEA;border:1px solid var(--primary);border-radius:10px;height:180px;display:flex;align-items:flex-start;padding:15px;color:var(--text-dark);font-size:18px;margin-top:5px;box-shadow:inset 0 2px 6px rgba(0,0,0,0.15);flex-wrap:wrap;overflow-y:auto;}
 
-        /* Input Box */
-        .input-section {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .input-section h3, .output-section h3 {
-            font-size: 18px;
-            color: var(--text-dark);
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        /* Buttons matching the image style */
-        .input-button, .main-control-btn, .output-button {
-            height: 50px;
-            padding: 0 20px;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 12px;
-            cursor: pointer;
-            border: none;
-            transition: all 0.2s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 100%;
-        }
-
-        /* Input Button Colors */
-        .start-voice-btn {
-            background-color: var(--button-blue);
-            color: white;
-        }
-        .upload-audio-btn {
-            background-color: var(--button-blue);
-            color: white;
-        }
-        .type-translate-btn {
-            background-color: var(--button-lavender);
-            color: var(--text-dark);
-        }
-
-        /* Main Control Buttons (Below Subtitle) */
-        .main-control-btn {
-            background-color: var(--button-lavender);
-            color: var(--text-dark);
-            flex-grow: 1;
-        }
-
-        /* Output Button Colors */
-        .play-audio-btn {
-            background-color: var(--button-blue);
-            color: white;
-            margin-top: 15px;
-        }
-        .download-transcript-btn {
-            background-color: var(--button-pink);
-            color: white;
-        }
-
-        /* Text Area Placeholder */
-        .translated-text-area {
-            background-color: #F8FAFC;
-            border: 1px solid #E5E7EB;
-            border-radius: 12px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            padding: 0 15px;
-            color: #9CA3AF;
-            font-size: 16px;
-            margin-top: 5px;
-        }
-        
-        /* ---------------------------------------------------- */
-        /* Media Query (Responsiveness) */
-        @media (max-width: 1200px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-                gap: 40px;
-            }
-            .main-column, .side-columns {
-                max-width: 100%;
-                width: 100%;
-            }
-            .side-columns {
-                flex-direction: row;
-                gap: 40px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .side-columns {
-                flex-direction: column;
-            }
-            .main-controls-group {
-                flex-wrap: wrap;
-            }
-            .main-controls-group .main-control-btn {
-                width: 48%; /* Adjust for better fit on small screens */
-            }
-        }
-    </style>
+/* Side Column Titles */
+/* ===== مسافة بين الأزرار ===== */
+.input-section .input-button,
+.output-section .output-button {
+    margin-bottom: 12px;
+}
+/* Responsive */
+@media(max-width:1200px){
+    .container{flex-direction:column;align-items:center;gap:40px;}
+    .main-column,.side-columns{max-width:100%;width:100%;}
+    .side-columns{flex-direction:row;gap:20px}
+}
+@media(max-width:768px){
+    .navbar{flex-direction:column;gap:15px}
+    .side-columns{flex-direction:column}
+}
+</style>
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo">
-            <i class="fas fa-hand-peace"></i> مشروع الإشارة
+<header class="navbar">
+    <div class="logo"><i class="fa-solid fa-eye"></i> مشروع الإشارة</div>
+    <nav>
+        <a href="#hero" class="active"><i class="fa-solid fa-pyramid"></i> الرئيسية</a>
+        <a href="#translation"><i class="fa-solid fa-language"></i> الترجمة</a>
+        <a href="#"><i class="fa-solid fa-book-skull"></i> تعلم الإشارات</a>
+        <a href="#" id="accessibility-btn" class="accessibility-btn"><i class="fa-solid fa-universal-access"></i> وضع الوصول الكامل</a>
+        <a href="#"><i class="fa-solid fa-lightbulb"></i> عن الموقع</a>
+        <a href="#" class="login-btn">دخول</a>
+        <a href="#" class="signup-btn">تسجيل</a>
+    </nav>
+</header>
+
+<section id="hero" class="hero-section">
+    <div class="hero-content">
+        <h1>
+            <span>مرحبا</span>
+            <span>بكم</span>
+            <span>في</span>
+            <span>مشروع</span>
+            <span>الإشارة</span>
+        </h1>
+        <p> تعلم وفهم الإشارات بطريقة ممتعة !</p>
+    </div>
+</section>
+
+<main id="translation" class="container">
+    <div class="side-columns left">
+        <div class="input-section card">
+            <h3>إدخال الصوت</h3>
+            <button class="input-button start-voice-btn"><i class="fas fa-microphone"></i> ابدأ التحدث</button>
+            <button class="input-button upload-audio-btn"><i class="fas fa-file-upload"></i> تحميل ملف صوتي</button>
+            <button class="input-button type-translate-btn"><i class="fas fa-marker"></i> كتابة للترجمة</button>
         </div>
-        <nav>
-            <a href="welcome-page.html"><i class="fas fa-handshake"></i> صفحة الترحيب</a>
-            <a href="index.html" class="active"><i class="fas fa-home"></i> الرئيسية</a>
-            <a href="#"><i class="fas fa-language"></i> الترجمة</a>
-            <a href="#"><i class="fas fa-book-open"></i> تعلم الإشارات</a>
-            <a href="#" id="accessibility-btn" class="accessibility-btn"><i class="fas fa-universal-access"></i> إتاحة</a>
-            <a href="#"><i class="fas fa-info-circle"></i> عن الموقع</a>
-            <a href="#" class="login-btn">دخول</a>
-            <a href="#" class="signup-btn">تسجيل</a>
-        </nav>
-    </header>
+    </div>
 
-    <main class="container">
-        
-        <div class="side-columns">
-            <div class="input-section card">
-                <h3>خلفية البطاقة</h3>
-                <button class="input-button start-voice-btn">
-                    <i class="fas fa-cloud"></i> ابدأ الصوت
-                    <i class="fas fa-play"></i>
-                </button>
-                <button class="input-button upload-audio-btn">
-                    <i class="fas fa-upload"></i> رفع ملف صوتي
-                    <i class="fas fa-pencil-alt"></i>
-                </button>
-                <button class="input-button type-translate-btn">
-                    <i class="fas fa-pen"></i> كتابة للترجمة
-                </button>
-            </div>
-        </div>
-
-        <section class="main-column">
-            <div class="card" style="padding: 20px; border: 3px solid #6EE7B7; background-color: #F8FAFC;">
-                <div class="avatar-card">
-                    <div class="avatar-box">
-                        3D
-                    </div>
-                    <span>منطقة رسوم الأفاتار المتحركة</span>
-                </div>
-            </div>
-
-            <div class="subtitle-bar">
-                
-            </div>
-
-            <div class="main-controls-group">
-                <button class="main-control-btn"><i class="fas fa-redo"></i> تكرار</button>
-                <button class="main-control-btn"><i class="fas fa-forward"></i> بطيء</button>
-                <button class="main-control-btn" style="flex-grow: 1.5; background-color: var(--button-blue); color: white;"><i class="fas fa-play"></i> تشغيل الترجمة</button>
-                <button class="main-control-btn"><i class="fas fa-expand"></i> ملء الشاشة</button>
-            </div>
-        </section>
-        
-        <div class="side-columns">
-            <div class="output-section card">
-                <h3>خلفية البطاقة</h3>
-                <div class="translated-text-area">
-                    منطقة النص المُترجم...
-                </div>
-                
-                <button class="output-button play-audio-btn">
-                    <i class="fas fa-play"></i> تشغيل الصوت
-                </button>
-                <button class="output-button download-transcript-btn">
-                    <i class="fas fa-download"></i> تحميل النص المكتوب
-                </button>
+    <section class="main-column">
+        <div class="card">
+            <div class="avatar-card">
+                <div class="avatar-box"><i class="fa-solid fa-user-astronaut"></i></div>
+                <span>رسوم الأفاتار المتحركة</span>
             </div>
         </div>
+        <div class="subtitle-bar"> هنا يظهر النص المترجم بالإشارة</div>
+    </section>
 
-    </main>
-    
-    <script>
-        // Function to toggle High Contrast (Accessibility) Mode
-        function toggleHighContrastMode() {
-            document.body.classList.toggle('high-contrast-mode');
-        }
+    <div class="side-columns right">
+        <div class="output-section card" style="max-width:280px; width:100%; height:250px;">
+            <h3>نص المُخرجات</h3>
+            <div class="translated-text-area">أرض الكنانة ترحب بكم... (هنا يظهر النص المترجم)</div>
+            <button class="output-button play-audio-btn"><i class="fas fa-volume-up"></i> تشغيل الصوت</button>
+            <button class="output-button download-transcript-btn"><i class="fas fa-file-download"></i> تحميل النص المكتوب</button>
+        </div>
+    </div>
+</main>
 
-        // Attach event listener to the Accessibility button
-        document.getElementById('accessibility-btn').addEventListener('click', function(event) {
-            event.preventDefault(); 
-            toggleHighContrastMode();
-        });
-    </script>
+<script>
+// فتح الصفحة تلقائيًا على hero section عند التحميل
+window.addEventListener('load', () => {
+    const heroSection = document.querySelector('#hero');
+    if(heroSection){
+        heroSection.scrollIntoView({behavior: 'smooth'});
+    }
+});
+
+// Accessibility
+document.getElementById('accessibility-btn').addEventListener('click', e=>{
+    e.preventDefault(); 
+    document.body.classList.toggle('high-contrast-mode');
+});
+
+// Words Reveal delay
+const heroWords = document.querySelectorAll('.hero-section h1 span');
+heroWords.forEach((word,index)=>{
+    word.style.animationDelay = `${index*0.12}s`;
+});
+
+// Typing translation
+const typeTranslateBtn = document.querySelector('.type-translate-btn');
+typeTranslateBtn.addEventListener('click', ()=>{
+    const inputField=document.createElement('input');
+    inputField.type='text'; inputField.placeholder='اكتب هنا لترجمته...';
+    inputField.style.padding='10px'; inputField.style.fontSize='16px';
+    inputField.style.borderRadius='8px'; inputField.style.border='1px solid var(--primary)';
+    inputField.style.width='100%'; inputField.style.marginTop='10px';
+
+    const submitBtn=document.createElement('button');
+    submitBtn.textContent='ترجمة';
+    submitBtn.style.background='var(--gold-gradient)'; submitBtn.style.color='var(--text-dark)';
+    submitBtn.style.border='none'; submitBtn.style.padding='10px';
+    submitBtn.style.borderRadius='8px'; submitBtn.style.cursor='pointer';
+    submitBtn.style.fontWeight='700'; submitBtn.style.marginTop='5px';
+
+    submitBtn.addEventListener('click', ()=>{
+        const text=inputField.value.trim();
+        if(text) typeTextEffect(text);
+        inputField.remove(); submitBtn.remove();
+    });
+
+    typeTranslateBtn.parentElement.appendChild(inputField);
+    typeTranslateBtn.parentElement.appendChild(submitBtn);
+});
+
+function typeTextEffect(text){
+    const area=document.querySelector('.translated-text-area');
+    area.textContent='';
+    let index=0;
+    const interval=setInterval(()=>{
+        area.textContent+=text.charAt(index);
+        index++;
+        if(index>=text.length) clearInterval(interval);
+    },30);
+}
+
+// Navbar Smooth Scroll
+document.querySelectorAll('.navbar nav a[href^="#"]').forEach(link=>{
+    link.addEventListener('click',function(e){
+        e.preventDefault();
+        const target=document.querySelector(this.getAttribute('href'));
+        if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+});
+
+// Hero Parallax
+window.addEventListener('scroll', function(){
+    const hero = document.querySelector('.hero-section');
+    const scrolled = window.scrollY;
+    hero.style.backgroundPosition = `center ${scrolled * 0.5}px`;
+    hero.querySelector('.hero-content').style.transform = `translateY(${scrolled*0.2}px)`;
+});
+
+// Start Voice - طلب إذن المايك
+document.querySelector('.start-voice-btn').addEventListener('click', async ()=>{
+    try{
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        alert('تم منح الإذن للميكروفون! التسجيل جاهز.');
+        stream.getTracks().forEach(track => track.stop());
+    }catch(err){
+        alert('لم يتم منح إذن الميكروفون!');
+    }
+});
+
+// Upload Audio - فتح File Explorer
+document.querySelector('.upload-audio-btn').addEventListener('click', ()=>{
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'audio/*';
+    input.onchange = e=>{
+        const file = e.target.files[0];
+        if(file) alert(`تم اختيار الملف: ${file.name}`);
+    };
+    input.click();
+});
+
+// Right Column Buttons
+document.querySelector('.play-audio-btn').addEventListener('click',()=>alert('تشغيل الصوت!'));
+document.querySelector('.download-transcript-btn').addEventListener('click',()=>alert('تم تحميل النص!'));
+</script>
+
 </body>
 </html>
